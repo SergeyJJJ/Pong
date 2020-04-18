@@ -16,11 +16,11 @@ public class LeftPlayerControll : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.W))
         {
-            transform.Translate(Vector3.up * Time.deltaTime * moveSpeed);
+            transform.Translate(Vector2.up * Time.deltaTime * moveSpeed);
         }
         else if (Input.GetKey(KeyCode.S))
         {
-            transform.Translate(Vector3.down * Time.deltaTime * moveSpeed);
+            transform.Translate(Vector2.down * Time.deltaTime * moveSpeed);
         }
     }
 }

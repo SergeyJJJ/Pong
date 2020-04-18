@@ -16,11 +16,11 @@ public class RightPlayerControll : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Keypad8))
         {
-            transform.Translate(Vector3.up * Time.deltaTime * moveSpeed);
+            transform.Translate(Vector2.up * Time.deltaTime * moveSpeed);
         }
         else if (Input.GetKey(KeyCode.Keypad5))
         {
-            transform.Translate(Vector3.down * Time.deltaTime * moveSpeed);
+            transform.Translate(Vector2.down * Time.deltaTime * moveSpeed);
         }
     }
 }

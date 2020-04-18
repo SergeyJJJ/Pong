@@ -5,38 +5,32 @@ using UnityEngine;
 public class BallMovement : MonoBehaviour
 {
     [SerializeField] private float _moveSpeed;
-    private float _xDirection;
-    private float _yDirection;
-    Vector2 _direction;
+    private Rigidbody _palyerRigidbody;
 
     // Start is called before the first frame update
     void Start()
     {
-        _xDirection = 1;
-        _yDirection = 1;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
+        _palyerRigidbody = GetComponent<Rigidbody>();
         Move();
     }
 
     private void Move()
     {
-        _direction = new Vector2(_xDirection, _yDirection);
-        transform.Translate(_direction * _moveSpeed * Time.deltaTime);
+        _palyerRigidbody.AddForce(CreateRandomDirection() * _moveSpeed, ForceMode.Impulse);
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private Vector2 CreateRandomDirection()
     {
-        if (collision.gameObject.CompareTag("Boundary"))
+        int xRandom;
+        int yRandom;
+
+        do
         {
-            _yDirection = -_yDirection;
-        }
-        else if (collision.gameObject.CompareTag("Player"))
-        {
-            _xDirection = -_xDirection;
-        }
+            xRandom = Random.Range(-4, 5);
+            yRandom = Random.Range(-2, 2);
+        }while (xRandom == 0 || yRandom == 0);
+
+        return new Vector2(xRandom, yRandom).normalized;
     }
+
 }
