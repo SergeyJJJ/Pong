@@ -9,6 +9,32 @@ public class Score : MonoBehaviour
 
     [SerializeField] private int _rightPlayerScore = 0;
     [SerializeField] private int _leftPlayerScore = 0;
+
+    public int LeftPlayerScore
+    { 
+        get
+        {
+            return _leftPlayerScore;
+        }
+
+        set
+        {
+            _leftPlayerScore = value;
+        }
+    }
+
+    public int RightPlayerScore
+    { 
+        get
+        {
+            return _rightPlayerScore;
+        }
+
+        set
+        {
+            _rightPlayerScore = value;
+        }
+    }
     
     private void Update()
     {
