@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class Score : MonoBehaviour
@@ -38,7 +36,7 @@ public class Score : MonoBehaviour
     
     private void Update()
     {
-        string textToDisplay = $"{_rightPlayerScore}     {_leftPlayerScore}";
+        string textToDisplay = $"{_rightPlayerScore}    {_leftPlayerScore}";
         _text.text = textToDisplay;   
     }
 

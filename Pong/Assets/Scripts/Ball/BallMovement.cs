@@ -1,14 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class BallMovement : MonoBehaviour
 {
     [SerializeField] private float _moveSpeed;
     private Rigidbody _palyerRigidbody;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         _palyerRigidbody = GetComponent<Rigidbody>();
         Move();
@@ -27,7 +24,7 @@ public class BallMovement : MonoBehaviour
         do
         {
             xRandom = Random.Range(-4, 5);
-            yRandom = Random.Range(-2, 2);
+            yRandom = Random.Range(-1, 2);
         }while (xRandom == 0 || yRandom == 0);
 
         return new Vector2(xRandom, yRandom).normalized;

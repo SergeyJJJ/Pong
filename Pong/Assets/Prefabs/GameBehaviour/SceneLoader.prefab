@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7602320427882771743
+--- !u!1 &3881579476047529882
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,22 +8,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7602320427882771729}
-  - component: {fileID: 7602320427882771742}
+  - component: {fileID: 6618231926660623902}
+  - component: {fileID: 5092009789018170391}
   m_Layer: 0
-  m_Name: BallSpawn
+  m_Name: SceneLoader
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7602320427882771729
+--- !u!4 &6618231926660623902
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7602320427882771743}
+  m_GameObject: {fileID: 3881579476047529882}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -31,17 +31,15 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7602320427882771742
+--- !u!114 &5092009789018170391
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7602320427882771743}
+  m_GameObject: {fileID: 3881579476047529882}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76c870c9997d6a347870251bea8bc6e7, type: 3}
+  m_Script: {fileID: 11500000, guid: 67dba06657c3cb34aaaf00a272d1a5d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _ball: {fileID: 8697013794107905882, guid: cdf8e16b732bd2946ac5cf5773b57511, type: 3}
-  _score: {fileID: 0}
