@@ -1,11 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
+using UnityEngine.UI;
 
 public class Score : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI _text;
+    [SerializeField] private Text _text;
 
     [SerializeField] private int _rightPlayerScore = 0;
     [SerializeField] private int _leftPlayerScore = 0;
@@ -38,8 +38,8 @@ public class Score : MonoBehaviour
     
     private void Update()
     {
-        string textToDisplay = $"{_rightPlayerScore}  :  {_leftPlayerScore}";
-        _text.SetText(textToDisplay);   
+        string textToDisplay = $"{_rightPlayerScore}     {_leftPlayerScore}";
+        _text.text = textToDisplay;   
     }
 
     public void AddRightPlayerScore()
