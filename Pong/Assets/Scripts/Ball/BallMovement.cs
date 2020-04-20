@@ -2,32 +2,36 @@
 
 public class BallMovement : MonoBehaviour
 {
-    [SerializeField] private float _moveSpeed;
-    private Rigidbody _palyerRigidbody;
+    [SerializeField] private float _speed;
+    private float _xDirection;
+    private float _yDirection;
 
     private void Start()
     {
-        _palyerRigidbody = GetComponent<Rigidbody>();
-        Move();
+        RandomSpawnDirection();
     }
 
-    private void Move()
+    private void Update()
     {
-        _palyerRigidbody.AddForce(CreateRandomDirection() * _moveSpeed, ForceMode.Impulse);
+        transform.Translate(new Vector2(_xDirection, _yDirection).normalized * Time.deltaTime * _speed, Space.World);
     }
 
-    private Vector2 CreateRandomDirection()
+    private void RandomSpawnDirection()
     {
-        int xRandom;
-        int yRandom;
+        int xMin = 6, xMax = 11;
+        int yMin = 0, yMax = 4;
 
-        do
-        {
-            xRandom = Random.Range(-4, 5);
-            yRandom = Random.Range(-1, 2);
-        }while (xRandom == 0 || yRandom == 0);
-
-        return new Vector2(xRandom, yRandom).normalized;
+        _xDirection = Random.Range(xMin, xMax) * RandomSign();
+        _yDirection = Random.Range(yMin, yMax) * RandomSign();
     }
 
+    private int RandomSign()
+    {
+        return Random.Range(1, 3) == 1 ? -1 : 1;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        
+    }
 }

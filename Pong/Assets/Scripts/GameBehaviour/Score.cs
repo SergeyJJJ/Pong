@@ -43,12 +43,10 @@ public class Score : MonoBehaviour
     public void AddRightPlayerScore()
     {
         _rightPlayerScore++;
-        Debug.Log(_rightPlayerScore);
     }
 
     public void AddLeftPlayerScore()
     {
         _leftPlayerScore++;
-        Debug.Log(_leftPlayerScore);
     }
 }

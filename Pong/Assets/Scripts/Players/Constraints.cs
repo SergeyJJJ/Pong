@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Constraints : MonoBehaviour
 {
-    private float _boundary = 7f;
+    private float _boundary = 7.3f;
 
     // Update is called once per frame
     void Update()
