@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class BallSpawn : MonoBehaviour
 {
@@ -16,13 +17,16 @@ public class BallSpawn : MonoBehaviour
         }
         else if (!IsAlive)
         {
-            SpawnNewBall();
+            StartCoroutine(SpawnNewBall());
         }
     }
 
-    private void SpawnNewBall()
+    IEnumerator SpawnNewBall()
     {
         IsAlive = true;
+
+        yield return new WaitForSeconds(1.5f);
+
         Instantiate(_ball, _ball.transform.position, _ball.transform.rotation);
     }
 
