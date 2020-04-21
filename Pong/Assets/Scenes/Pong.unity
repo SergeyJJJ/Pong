@@ -1221,6 +1221,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 287399104753689426, guid: 0df0227f89c850049a193a23c079aab2, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 20bf352ffe9d0814295959361b1868ea, type: 2}
     - target: {fileID: 287399104753689427, guid: 0df0227f89c850049a193a23c079aab2, type: 3}
       propertyPath: m_Name
       value: LeftPlayer
@@ -1615,6 +1619,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RightPlayer
       objectReference: {fileID: 0}
+    - target: {fileID: 5966839260030321425, guid: 0d9fb5a350b125240a285a3a232b197d, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 20bf352ffe9d0814295959361b1868ea, type: 2}
     - target: {fileID: 5966839260030321436, guid: 0d9fb5a350b125240a285a3a232b197d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 11

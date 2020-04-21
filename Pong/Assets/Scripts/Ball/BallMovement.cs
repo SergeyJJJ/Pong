@@ -11,7 +11,7 @@ public class BallMovement : MonoBehaviour
         RandomSpawnDirection();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         transform.Translate(new Vector2(_xDirection, _yDirection).normalized * Time.deltaTime * _speed, Space.World);
     }
@@ -37,19 +37,20 @@ public class BallMovement : MonoBehaviour
             _xDirection = -_xDirection;
             ChangeYDirection(collision);
         }
+        else if (collision.gameObject.CompareTag("Boundary"))
+        {
+            _yDirection = -_yDirection;
+        }
     }
 
     private void ChangeYDirection(Collision paddle)
     {
-        float paddleCenterPoint = paddle.transform.localScale.y / 2;
-        //float paddleCurrentCenterYPosition = paddle.transform.position.y - paddleCenterPoint;
-        float paddleCurrentCenterYPosition = paddle.transform.position.y;
+        float angleChangeCoefficient = 2f;
 
+        float paddleCurrentCenterYPosition = paddle.transform.position.y;
         float collisionPointY = transform.position.y;
         float yDifference = collisionPointY - paddleCurrentCenterYPosition;
         
-        /*Debug.Log($" paddleCurrentCenterYPosition{paddleCurrentCenterYPosition}");
-        Debug.Log($"collisionPointY:{collisionPointY}; paddleCurrentCenterYPosition{paddleCurrentCenterYPosition}");
-        */
+        _yDirection =+ (yDifference * angleChangeCoefficient);
     }
 }

@@ -45,3 +45,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _ball: {fileID: 8697013794107905882, guid: cdf8e16b732bd2946ac5cf5773b57511, type: 3}
   _score: {fileID: 0}
+  _sceneLoader: {fileID: 0}

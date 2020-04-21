@@ -26,7 +26,7 @@ public class BallSpawn : MonoBehaviour
     {
         IsAlive = true;
 
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(1.75f);
 
         Instantiate(_ball, _spawnPosition, _ball.transform.rotation);
     }
