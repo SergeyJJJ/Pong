@@ -7,6 +7,7 @@ public class BallSpawn : MonoBehaviour
     [SerializeField] private Score _score;
     [SerializeField] private SceneLoader _sceneLoader;
     public bool IsAlive { get; set; } = false;
+    private Vector2 _spawnPosition = new Vector2(0, 9);
 
     private void FixedUpdate()
     {
@@ -27,7 +28,7 @@ public class BallSpawn : MonoBehaviour
 
         yield return new WaitForSeconds(1.5f);
 
-        Instantiate(_ball, _ball.transform.position, _ball.transform.rotation);
+        Instantiate(_ball, _spawnPosition, _ball.transform.rotation);
     }
 
     private bool IsGameOver()

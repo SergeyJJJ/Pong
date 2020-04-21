@@ -42,10 +42,14 @@ public class BallMovement : MonoBehaviour
     private void ChangeYDirection(Collision paddle)
     {
         float paddleCenterPoint = paddle.transform.localScale.y / 2;
-        float paddleCurrentCenterYPosition = paddle.transform.position.y - paddleCenterPoint;
+        //float paddleCurrentCenterYPosition = paddle.transform.position.y - paddleCenterPoint;
+        float paddleCurrentCenterYPosition = paddle.transform.position.y;
+
         float collisionPointY = transform.position.y;
         float yDifference = collisionPointY - paddleCurrentCenterYPosition;
-        Debug.Log($" paddleCurrentCenterYPosition{paddleCurrentCenterYPosition}");
-        Debug.Log($"collisionPointY:{collisionPointY}; yDifference:{yDifference}");
+        
+        /*Debug.Log($" paddleCurrentCenterYPosition{paddleCurrentCenterYPosition}");
+        Debug.Log($"collisionPointY:{collisionPointY}; paddleCurrentCenterYPosition{paddleCurrentCenterYPosition}");
+        */
     }
 }
