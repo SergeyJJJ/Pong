@@ -32,6 +32,20 @@ public class BallMovement : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            _xDirection = -_xDirection;
+            ChangeYDirection(collision);
+        }
+    }
+
+    private void ChangeYDirection(Collision paddle)
+    {
+        float paddleCenterPoint = paddle.transform.localScale.y / 2;
+        float paddleCurrentCenterYPosition = paddle.transform.position.y - paddleCenterPoint;
+        float collisionPointY = transform.position.y;
+        float yDifference = collisionPointY - paddleCurrentCenterYPosition;
+        Debug.Log($" paddleCurrentCenterYPosition{paddleCurrentCenterYPosition}");
+        Debug.Log($"collisionPointY:{collisionPointY}; yDifference:{yDifference}");
     }
 }
