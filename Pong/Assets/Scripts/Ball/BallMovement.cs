@@ -45,7 +45,7 @@ public class BallMovement : MonoBehaviour
 
     private void ChangeYDirection(Collision paddle)
     {
-        float angleChangeCoefficient = 2f;
+        float angleChangeCoefficient = 2.2f;
 
         float paddleCurrentCenterYPosition = paddle.transform.position.y;
         float collisionPointY = transform.position.y;
