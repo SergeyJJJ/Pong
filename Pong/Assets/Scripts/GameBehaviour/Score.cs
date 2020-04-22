@@ -49,12 +49,20 @@ public class Score : MonoBehaviour
     public void AddRightPlayerScore()
     {
         _rightPlayerScore++;
-        _goalSound.Play();
+        PlaySound();
     }
 
     public void AddLeftPlayerScore()
     {
         _leftPlayerScore++;
-        _goalSound.Play();
+        PlaySound();
+    }
+
+    private void PlaySound()
+    {
+        if (_leftPlayerScore != 9 && _rightPlayerScore != 9)
+        {
+            _goalSound.Play();
+        }
     }
 }
