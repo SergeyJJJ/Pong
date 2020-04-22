@@ -2,7 +2,8 @@
 
 public class BallMovement : MonoBehaviour
 {
-    [SerializeField] private AudioSource _hitSound;
+    [SerializeField] private AudioSource _paddleHitSound;
+    [SerializeField] private AudioSource _boundaryhitSound;
     private float _speed = 10f;
     private float _xDirection;
     private float _yDirection;
@@ -19,7 +20,7 @@ public class BallMovement : MonoBehaviour
 
     private void RandomSpawnDirection()
     {
-        int xMin = 6, xMax = 11;
+        int xMin = 5, xMax = 11;
         int yMin = 0, yMax = 4;
 
         _xDirection = Random.Range(xMin, xMax) * RandomSign();
@@ -39,11 +40,13 @@ public class BallMovement : MonoBehaviour
             ChangeYDirection(collision);
             _speed += 0.3f;
 
-            _hitSound.Play();
+            _paddleHitSound.Play();
         }
         else if (collision.gameObject.CompareTag("Boundary"))
         {
             _yDirection = -_yDirection;
+
+            _boundaryhitSound.Play();
         }
     }
 
