@@ -3,7 +3,8 @@ using UnityEngine.UI;
 
 public class Score : MonoBehaviour
 {
-    [SerializeField] private Text _text;
+    [SerializeField]private AudioSource _goalSound;
+    [SerializeField]private Text _text;
 
     [SerializeField] private int _rightPlayerScore = 0;
     [SerializeField] private int _leftPlayerScore = 0;
@@ -36,17 +37,24 @@ public class Score : MonoBehaviour
     
     private void Update()
     {
+       DisplayScore();  
+    }
+
+    private void DisplayScore()
+    {
         string textToDisplay = $"{_rightPlayerScore}    {_leftPlayerScore}";
-        _text.text = textToDisplay;   
+        _text.text = textToDisplay;  
     }
 
     public void AddRightPlayerScore()
     {
         _rightPlayerScore++;
+        _goalSound.Play();
     }
 
     public void AddLeftPlayerScore()
     {
         _leftPlayerScore++;
+        _goalSound.Play();
     }
 }
