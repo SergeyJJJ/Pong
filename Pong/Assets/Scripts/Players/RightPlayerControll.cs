@@ -5,7 +5,7 @@ public class RightPlayerControll : MonoBehaviour
     [SerializeField] private float moveSpeed;
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         Move();
     }

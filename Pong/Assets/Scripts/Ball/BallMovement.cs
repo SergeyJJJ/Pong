@@ -4,7 +4,7 @@ public class BallMovement : MonoBehaviour
 {
     [SerializeField] private AudioSource _paddleHitSound;
     [SerializeField] private AudioSource _boundaryhitSound;
-    private float _speed = 10f;
+    [SerializeField] private float _speed = 11f;
     private float _xDirection;
     private float _yDirection;
 
@@ -38,14 +38,13 @@ public class BallMovement : MonoBehaviour
         {
             _xDirection = -_xDirection;
             ChangeYDirection(collision);
-            _speed += 0.3f;
+            _speed += 0.32f;
 
             _paddleHitSound.Play();
         }
         else if (collision.gameObject.CompareTag("Boundary"))
         {
             _yDirection = -_yDirection;
-
             _boundaryhitSound.Play();
         }
     }

@@ -11,6 +11,7 @@ public class BallDestroy : MonoBehaviour
         _ballSpawn = GameObject.Find("BallSpawn").GetComponent<BallSpawn>();
         _score = GameObject.Find("ScoreTracker").GetComponent<Score>();    
     }
+    
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("RightTrigger"))
