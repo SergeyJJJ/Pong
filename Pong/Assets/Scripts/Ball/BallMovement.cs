@@ -39,7 +39,6 @@ public class BallMovement : MonoBehaviour
             _xDirection = -_xDirection;
             ChangeYDirection(collision);
             _speed += 0.32f;
-
             _paddleHitSound.Play();
         }
         else if (collision.gameObject.CompareTag("Boundary"))
