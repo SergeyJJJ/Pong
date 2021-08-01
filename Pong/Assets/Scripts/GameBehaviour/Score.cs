@@ -9,6 +9,7 @@ public class Score : MonoBehaviour
     [SerializeField] private int _rightPlayerScore = 0;
     [SerializeField] private int _leftPlayerScore = 0;
 
+
     public int LeftPlayerScore
     { 
         get
@@ -21,6 +22,7 @@ public class Score : MonoBehaviour
             _leftPlayerScore = value;
         }
     }
+
 
     public int RightPlayerScore
     { 
@@ -35,10 +37,12 @@ public class Score : MonoBehaviour
         }
     }
     
+
     private void Update()
     {
        DisplayScore();  
     }
+
 
     private void DisplayScore()
     {
@@ -46,17 +50,20 @@ public class Score : MonoBehaviour
         _text.text = textToDisplay;  
     }
 
+
     public void AddRightPlayerScore()
     {
         _rightPlayerScore++;
         PlaySound();
     }
 
+
     public void AddLeftPlayerScore()
     {
         _leftPlayerScore++;
         PlaySound();
     }
+
 
     private void PlaySound()
     {

@@ -9,6 +9,7 @@ public class BallSpawn : MonoBehaviour
     public bool IsAlive { get; set; } = false;
     private Vector2 _spawnPosition = new Vector2(0, 9);
 
+
     private void FixedUpdate()
     {
         if (IsGameOver())
@@ -22,6 +23,7 @@ public class BallSpawn : MonoBehaviour
         }
     }
 
+
     IEnumerator SpawnNewBall()
     {
         IsAlive = true;
@@ -31,10 +33,12 @@ public class BallSpawn : MonoBehaviour
         Instantiate(_ball, _spawnPosition, _ball.transform.rotation);
     }
 
+
     private bool IsGameOver()
     {
         return (_score.RightPlayerScore > 8) || (_score.LeftPlayerScore > 8);
     }
+
 
     private void DisableSpawn()
     {

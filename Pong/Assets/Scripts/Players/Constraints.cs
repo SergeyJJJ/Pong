@@ -5,11 +5,12 @@ public class Constraints : MonoBehaviour
     private float _upperBoundary = 16.3f;
     private float _lowerBoundary = 1.44f;
 
-    // Update is called once per frame
-    void Update()
+   
+    private void Update()
     {
         ResetPosition();
     }
+
 
     private void ResetPosition()
     {

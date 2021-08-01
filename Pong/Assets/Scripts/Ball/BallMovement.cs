@@ -8,15 +8,18 @@ public class BallMovement : MonoBehaviour
     private float _xDirection;
     private float _yDirection;
 
+
     private void Start()
     {
         RandomSpawnDirection();
     }
 
+
     private void FixedUpdate()
     {
         transform.Translate(new Vector2(_xDirection, _yDirection).normalized * Time.deltaTime * _speed, Space.World);
     }
+
 
     private void RandomSpawnDirection()
     {
@@ -27,10 +30,12 @@ public class BallMovement : MonoBehaviour
         _yDirection = Random.Range(yMin, yMax) * RandomSign();
     }
 
+
     private int RandomSign()
     {
         return Random.Range(1, 3) == 1 ? -1 : 1;
     }
+
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -47,6 +52,7 @@ public class BallMovement : MonoBehaviour
             _boundaryhitSound.Play();
         }
     }
+
 
     private void ChangeYDirection(Collision paddle)
     {

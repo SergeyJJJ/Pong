@@ -4,11 +4,12 @@ public class LeftPlayerControll : MonoBehaviour
 {
     [SerializeField] private float moveSpeed;
 
-    // Update is called once per frame
-    void FixedUpdate()
+    
+    private void FixedUpdate()
     {
         Move();
     }
+
 
     private void Move()
     {
